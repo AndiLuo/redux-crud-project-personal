@@ -25,6 +25,7 @@ export const fetchPins = (search) => (dispatch) => {
       '/api/pins'
     )
     .then((response) => {
+      setTimeout(() => {
       // initialize array for pins
       response.data.results.forEach(image => {
         // checks if search results contain title OR username
@@ -39,6 +40,7 @@ export const fetchPins = (search) => (dispatch) => {
           // EVERYTHING IS IMMUTABLE
           payload: gallery,
         });
-      })
+      }, 2000)
+    })
     .catch((err) => console.log(err));
 };

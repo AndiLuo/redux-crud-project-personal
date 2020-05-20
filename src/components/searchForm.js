@@ -28,7 +28,7 @@ function SearchForm(props) {
       <form onSubmit = {handleSubmit}>
         <TextField
           id="standard-basic"
-          label="Standard"
+          label="Search Pins"
           placeholder="Find You"
           onChange={handleChange}
           defaultValue={props.inputValue}

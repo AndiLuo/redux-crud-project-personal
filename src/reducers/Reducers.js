@@ -16,13 +16,20 @@ export const inputReducer = (state = initialState, action) => {
         //assigns state of text field
         searchText: action.payload,
       }
-    // case LOADING:
-    //   return {
-    //     ...state,
-    //     loading: true
-    //   }
+    case LOADING:
+      return {
+        ...state,
+        loading: true
+      }
+      case FETCH_PINS:
+        return {
+          ...state,
+          //assigns state of pins array
+          loading: false
+        }   
     default:
       return state
+
   }
 }
 
@@ -35,13 +42,7 @@ export const fetchReducer = (state = initialState, action) => {
         //assigns state of pins array
         pins: action.payload,
         loading: false
-      }
-      case LOADING:
-        return {
-          ...state,
-          loading: false
-        }
-      
+      }   
     default:
       return state
   }

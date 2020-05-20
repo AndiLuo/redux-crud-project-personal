@@ -39,21 +39,3 @@ function Pin(props) {
         
 }
 export default Pin;
-
-{/* <Image
-alt="yes"
-src={pin.pins.image}
-naturalHeight={50}
-naturalWidth={50}
-> 
-</Image>
-<Box position="absolute" padding={2} bottom right>
-</Box>
-</Box>
-<Box>
-<Text>Title: {pin.pins.pin.title}</Text>
-</Box>
-<Box>
-<Text>Author: {pin.pins.author}</Text>
-</Box>
-</Card> */}
