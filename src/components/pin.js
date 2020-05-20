@@ -8,24 +8,11 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-        padding: theme.spacing(2)
-    }
-}))
 
 function Pin(props) {
     const pin = props;
     return(
-        <Grid
-        container
-        direction="row"
-        justify="flex-start"
-        alignItems="flex-start"
-        >
             <Card
             >
                <CardActionArea>
@@ -35,15 +22,18 @@ function Pin(props) {
                    title={pin.pins.title}
                    />
                    <CardContent>
-                        <Typography>
+                        <Typography gutterBottom variant="h5">
                             {pin.pins.title}
                         </Typography>
+                        <Typography>
+                            {pin.pins.author}
+                        </Typography>
+
 
                    </CardContent>
 
                </CardActionArea>
             </Card>
-        </Grid>
             
     );
         
