@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {searchPin, fetchPins, setLoading} from "../actions/fetchAction";
 import TextField from '@material-ui/core/TextField';
@@ -9,12 +9,21 @@ const mapStateToProps = (state) => ({
 
 function SearchForm(props) {
 
-  // sets search state to input value
+  useEffect(() => {
+    props.fetchPins(props.searchText)
+  })
+
+  // sets search state to input value, call fetchPins here for auto fetch on input change
   const handleChange = (e) => {
     e.preventDefault()
-    props.searchPin(e.target.value);
-    props.fetchPins(props.searchText)
-    props.setLoading();
+    if (e.target.value.length > 3 ){
+      props.searchPin(e.target.value);
+      props.setLoading();
+      props.fetchPins(props.searchText)
+    }
+    else{
+      return
+    }
   };
 
   const handleSubmit = (e) => {

@@ -20,7 +20,6 @@ function PinContainer(props) {
   const { pins } = props;
   let gallery = "";
   gallery = pins.map((pin, idx) => <Pin key={idx} pins={pin} />);
-  console.log(gallery);
   return <Grid
         className={classes.root}
         container
