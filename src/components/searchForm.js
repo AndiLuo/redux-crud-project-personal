@@ -1,7 +1,7 @@
-
 import React from "react";
 import { connect } from "react-redux";
 import {searchPin, fetchPins, setLoading} from "../actions/fetchAction";
+import TextField from '@material-ui/core/TextField';
 
 const mapStateToProps = (state) => ({
   searchText: state.pins.searchText
@@ -26,8 +26,9 @@ function SearchForm(props) {
     <div direction="row" style={{ whiteSpace: 'nowrap'}}>
       &nbsp;
       <form onSubmit = {handleSubmit}>
-        <input
-          id="searchFormr"
+        <TextField
+          id="standard-basic"
+          label="Standard"
           placeholder="Find You"
           onChange={handleChange}
           defaultValue={props.inputValue}
