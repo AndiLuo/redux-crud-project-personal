@@ -11,7 +11,10 @@ function SearchForm(props) {
 
   // sets search state to input value
   const handleChange = (e) => {
+    e.preventDefault()
     props.searchPin(e.target.value);
+    props.fetchPins(props.searchText)
+    props.setLoading();
   };
 
   const handleSubmit = (e) => {
