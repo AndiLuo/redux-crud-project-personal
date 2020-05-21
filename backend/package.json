@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npx nodemon app.js",
+    "start": "npx nodemon server.js",
     "test": "npx jest"
   },
   "repository": {
@@ -22,7 +22,8 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^15.0.0",
-    "mongodb": "^3.5.7"
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.15"
   },
   "devDependencies": {
     "jest": "^25.3.0",

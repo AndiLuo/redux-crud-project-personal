@@ -1,14 +1,21 @@
-// // const database = require('./database/sample_database')
-// // const app = require('./app')(database)
-// import { ApolloServer, gql } from "apollo-server-express";
-// import express from 'express';
+const express = require('express')
+const graphqlHTTP = require('express-graphql')
+const schema = require('./schema')
+const mongoose = require('mongoose')
+const ExpressGraphQL = require("express-graphql");
+
+const app = express();
 
 
 
+app.use(
+    '/graphql',
+    graphqlHTTP({
+        schema,
+        graphiql: true
+    })
+)
 
-
-// // app.listen(8080, () => {
-// //   console.log("listening on port 8080")
-// // })
-//  //null is replaced with options later to (query string)
-//     // database.getAllPins(null, (err, pins) =>{
+app.listen(8080, () => {
+    console.log("GraphQL server listening on port 8080");
+});

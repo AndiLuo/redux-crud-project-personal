@@ -5,6 +5,7 @@ const assert = require("assert");
 const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017";
 const dbName = "pinDB";
+
 // assign connection to client var
 const client = new MongoClient(url);
 
@@ -39,45 +40,5 @@ app.get("/api/pins", function (req, res, next) {
 app.listen(8080, () => {
     console.log("listening on port 8080")
   })
-// const app = express();
-// const findPins = function(db, callback) {
 
-// }
-
-// app.get('/api/pins', function(req, res) {
-//     mongo.connect(url, function(err, pinDB) {
-//         assert.equal(null, err)
-//     })
-// })
-
-// app.use (
-//     '/api/pins',
-//     graphqlHTTP({
-//         schema,
-//         graphql: true
-//     })
-// )
-
-// module.exports = function (database) {
-//     const app = express();
-
-// app.get("/api/pins", (req, res) => {
-//     mock_database.getAllPins(null, (err, pins) => {
-//         res.send({ results: pins });
-//     });
-// });
-
-// app.get("/api/pins:id", (req, res) => {
-//     mock_database.getPin(null, (err, pins) => {
-//         pins.forEach((pin) => {
-//             console.log(pin);
-//             console.log(req.params.id);
-//             if (req.params.id === ":" + pin.id) {
-//                 res.send({ results: pin });
-//             }
-//         });
-//     });
-// });
-
-// return app;
 // }
