@@ -11,7 +11,8 @@ class NewPin extends Component {
         super();
 
         this.state = {
-            pin:{}
+            pin:{},
+            confirm: ''
         };
     }
 
@@ -33,6 +34,21 @@ class NewPin extends Component {
         this.props.history.push("/");
         console.log(this.state.pin)
     }
+
+    confirmEntry(e){
+        e.preventDefault()
+        this.setState({
+            confirm: 'true'
+        })
+        alert('Entry confirmed, please submit')
+      }
+    
+    validateEntry(){
+        if( this.state.confirm === 'true'){
+            return this.state.confirm
+        }
+    }
+
     render() {
     return(
         <div>
@@ -50,7 +66,18 @@ class NewPin extends Component {
 
                 <br/>
                 <br/>
-                <Button variant='contained' color="primary" onClick={this.handleSubmit.bind(this)}>Create Pin</Button>
+                <Button 
+                variant='contained' 
+                color="primary"
+                onClick={this.confirmEntry.bind(this)}>
+                    Confirm Entry
+                </Button>
+                <Button
+                    disabled={!this.state.confirm}
+                    variant='contained' 
+                    color="primary" 
+                    onClick={this.handleSubmit.bind(this)}>
+                Create Pin</Button>
              </form>
         </div>
     )
