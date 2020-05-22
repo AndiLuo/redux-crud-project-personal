@@ -5,7 +5,6 @@ const assert = require("assert");
 const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017";
 const dbName = "pinDB";
-const pinController = require("./controllers/PinController");
 
 // assign connection to client var
 const client = new MongoClient(url);

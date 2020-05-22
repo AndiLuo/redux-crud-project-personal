@@ -19,8 +19,9 @@ class NewPin extends Component {
 
     }
     createSubmission(e) {
+        //Everytime function is called, object gets assigned to it according to field
         let pinSubmission = Object.assign({}, this.state.pin)
-
+        //looks at each textfields ID and sets values in this.state.pin according to that textfields value
         pinSubmission[e.target.id] = e.target.value
         this.setState({
             pin: pinSubmission
