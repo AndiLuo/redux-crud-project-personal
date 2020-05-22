@@ -15,6 +15,9 @@ class NewPin extends Component {
         };
     }
 
+    componentDidMount(){
+
+    }
     createSubmission(e) {
         let pinSubmission = Object.assign({}, this.state.pin)
 
@@ -24,7 +27,8 @@ class NewPin extends Component {
         })
     }
 
-    handleSubmit(){
+    handleSubmit(e){
+        e.preventDefault()
         this.props.dispatch(createPin(this.state.pin));    
         this.props.history.push("/");
         console.log(this.state.pin)
@@ -32,20 +36,22 @@ class NewPin extends Component {
     render() {
     return(
         <div>
-            Title <TextField onChange={this.createSubmission.bind(this)} id="title" type="text" placeholder= "Title"/><br/>
-                Author: <TextField onChange={this.createSubmission.bind(this)} id="author" type="text" placeholder= "author"/><br/>
-                Image: <TextField onChange={this.createSubmission.bind(this)} id="image" type="text" placeholder= "image"/><br/>
+            <form>
+                Title <TextField required onChange={this.createSubmission.bind(this)} id="title" type="text" placeholder= "Title"/><br/>
+                Author: <TextField required onChange={this.createSubmission.bind(this)} id="author" type="text" placeholder= "author"/><br/>
+                Image: <TextField required onChange={this.createSubmission.bind(this)} id="image" type="text" placeholder= "image"/><br/>
                 Description:
                 <br/>
                 <TextField multiline rows={3} onChange={this.createSubmission.bind(this)} id="description" type="text"/>
                 <br/>
-                Width:<TextField onChange={this.createSubmission.bind(this)} id="width" type="number"/>
+                Width:<TextField required onChange={this.createSubmission.bind(this)} id="width" type="number"/>
                 <br/>
-                Height:<TextField onChange={this.createSubmission.bind(this)} id="height" type="number"/>
+                Height:<TextField required onChange={this.createSubmission.bind(this)} id="height" type="number"/>
 
                 <br/>
                 <br/>
                 <Button variant='contained' color="primary" onClick={this.handleSubmit.bind(this)}>Create Pin</Button>
+             </form>
         </div>
     )
 }}
