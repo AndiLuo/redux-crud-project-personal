@@ -6,10 +6,8 @@ const ExpressGraphQL = require("express-graphql");
 
 const app = express();
 
-
-
 app.use(
-    '/graphql',
+    '/graphql/pins',
     graphqlHTTP({
         schema,
         graphiql: true
@@ -17,5 +15,5 @@ app.use(
 )
 
 app.listen(8080, () => {
-    console.log("GraphQL server listening on port 8080");
+    console.log(`GraphQL server listening http://localhost:8080/graphql/pins`);
 });
