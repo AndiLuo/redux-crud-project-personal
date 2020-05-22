@@ -36,6 +36,25 @@ app.get("/api/pins", function (req, res, next) {
   });
 });
 
+var enableCORS = function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, token, Content-Length, X-Requested-With, *');
+  if ('OPTIONS' === req.method) {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+};
+
+app.all("/*", function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, token, Content-Length, X-Requested-With, *');
+  next();
+});
+app.use(enableCORS);
+
 
 app.listen(8080, () => {
     console.log("listening on port 8080")
