@@ -40,7 +40,7 @@ class NewPin extends Component {
         this.setState({
             confirm: 'true'
         })
-        alert('Entry confirmed, please submit')
+        alert('Entry confirmed, please press create pin ')
       }
     
     validateEntry(){
@@ -72,7 +72,7 @@ class NewPin extends Component {
                 onClick={this.confirmEntry.bind(this)}>
                     Confirm Entry
                 </Button>
-                <Button
+                <Button   
                     disabled={!this.state.confirm}
                     variant='contained' 
                     color="primary" 

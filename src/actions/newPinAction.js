@@ -1,9 +1,8 @@
-import { NEW_PIN } from "./types";
-import axios from "axios";
 
+//Takes in data arg, dispatches data to EXPRESS server and POSTS the data into the db
 export function createPin(data){
     return dispatch => {
-        return fetch('http://localhost:8080/api/pins', { 
+        return fetch('/api/pins', { 
             method: 'POST', 
              headers: {
                 'Accept': 'application/json',
