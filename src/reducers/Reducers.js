@@ -1,13 +1,16 @@
-import { SEARCH_PIN } from '../actions/types'
-import { FETCH_PINS} from '../actions/types'
-import { LOADING} from '../actions/types'
+import { 
+  SEARCH_PIN, 
+  FETCH_PINS, 
+  LOADING, 
+  NEW_PIN } from '../actions/types'
 
 const initialState = {
   searchText: '',
   pins: [],
   loading: false,
-  pin: []
+  pin: {}
 }
+
 export const inputReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEARCH_PIN:
@@ -33,7 +36,6 @@ export const inputReducer = (state = initialState, action) => {
   }
 }
 
-
 export const fetchReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PINS:
@@ -48,3 +50,14 @@ export const fetchReducer = (state = initialState, action) => {
   }
 }
 
+export const newPinReducer = (state = initialState, action) => {
+  switch(action.type){
+    case NEW_PIN:
+      return{
+        ...state,
+        pin: action.payload
+      }
+    default:
+      return state
+  }
+}

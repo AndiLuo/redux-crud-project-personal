@@ -33,7 +33,6 @@ function SearchForm(props) {
 
   }
 
-
   return (
     <div direction="row" style={{ whiteSpace: 'nowrap'}}>
       &nbsp;

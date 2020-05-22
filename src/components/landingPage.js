@@ -1,8 +1,9 @@
 import React from 'react';
 import SearchForm from './searchForm';
-import {Provider, connect} from 'react-redux';
+import {connect} from 'react-redux';
 import PinContainer from './pinContainer';
 import Spinner from './spinner'
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => ({
     loading: state.pins.loading
@@ -18,4 +19,4 @@ function LandingPage(props) {
     )
 }
 
-export default connect(mapStateToProps)(LandingPage);
+export default withRouter(connect(mapStateToProps)(LandingPage));
