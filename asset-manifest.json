@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/pinstagram-redux-local/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/pinstagram-redux-local/static/js/main.b1b56da9.chunk.js",
+    "main.js.map": "/pinstagram-redux-local/static/js/main.b1b56da9.chunk.js.map",
+    "runtime-main.js": "/pinstagram-redux-local/static/js/runtime-main.804127f8.js",
+    "runtime-main.js.map": "/pinstagram-redux-local/static/js/runtime-main.804127f8.js.map",
+    "static/css/2.ecc39376.chunk.css": "/pinstagram-redux-local/static/css/2.ecc39376.chunk.css",
+    "static/js/2.f6cdab52.chunk.js": "/pinstagram-redux-local/static/js/2.f6cdab52.chunk.js",
+    "static/js/2.f6cdab52.chunk.js.map": "/pinstagram-redux-local/static/js/2.f6cdab52.chunk.js.map",
+    "index.html": "/pinstagram-redux-local/index.html",
+    "precache-manifest.0aaa1d78923620ba02f67f18fc5b0562.js": "/pinstagram-redux-local/precache-manifest.0aaa1d78923620ba02f67f18fc5b0562.js",
+    "service-worker.js": "/pinstagram-redux-local/service-worker.js",
+    "static/css/2.ecc39376.chunk.css.map": "/pinstagram-redux-local/static/css/2.ecc39376.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/pinstagram-redux-local/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.f6cdab52.chunk.js.LICENSE.txt": "/pinstagram-redux-local/static/js/2.f6cdab52.chunk.js.LICENSE.txt",
+    "static/media/spinner_ex.gif": "/pinstagram-redux-local/static/media/spinner_ex.dc252b3b.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.804127f8.js",
+    "static/css/2.ecc39376.chunk.css",
+    "static/js/2.f6cdab52.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.b1b56da9.chunk.js"
+  ]
+}
