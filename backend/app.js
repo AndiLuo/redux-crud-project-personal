@@ -5,6 +5,7 @@ const assert = require("assert");
 const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017";
 const dbName = "pinDB";
+const pinController = require("./controllers/PinController");
 
 // assign connection to client var
 const client = new MongoClient(url);
@@ -51,12 +52,14 @@ app.post("/api/pins", function (req, res, next) {
     console.log("Connected to server");
     //now "db" database is ready 2 use
     const db = client.db(dbName);
-    //req.body === the swertle object
+    //req.body === the object
     console.log(req.body)
-    //inserts it into the database
+    //inserts
     db.collection('pins').insertOne(req.body)
     });
   })
+
+
 
 
 app.listen(PORT, () => {
