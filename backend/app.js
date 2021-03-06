@@ -45,7 +45,7 @@ app.get("/api/pins", function (req, res, next) {
   });
 });
 
-//CRUDUUD
+//allows createPin front-end component to create data entries and add them to mongo database
 app.post("/api/pins", function (req, res, next) {
   client.connect(function (err) {
     assert.equal(null, err);
