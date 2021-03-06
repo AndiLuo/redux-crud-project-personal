@@ -1,10 +1,8 @@
 Hi everyone! This is just a small MERN stack (Mongo-Express-React-Node) application that allows you to search for and create data entries.
-## Available Scripts
 
-In the project directory, you can run:
 
 ### `npm install`
-Prior to starting the app, you will need to run 'npm install' in the backend directory and frontend directory to install all neccessary modules.
+Prior to starting the app, you will need to run 'npm install' via. node terminal in the backend directory and frontend directory to install all neccessary modules.
 
 
 ### `npm start`
