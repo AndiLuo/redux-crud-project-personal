@@ -31,6 +31,7 @@ const findPins = function (db, callback) {
   });
 };
 
+// /api/pins == default page
 //creates connection and assigns entries to route
 app.get("/api/pins", function (req, res, next) {
   client.connect(function (err) {
