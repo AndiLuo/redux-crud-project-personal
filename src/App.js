@@ -14,7 +14,7 @@ const client = new ApolloClient({
 
 function App(props) {
   return (
-    //lol
+    //Apollo client routing
     <div>
     <ApolloProvider client = {client}>
       <Provider store = {store}>
