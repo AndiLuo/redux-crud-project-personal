@@ -4,12 +4,13 @@ import { createPin } from '../actions/newPinAction'
 import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
+
 
 class NewPin extends Component {
 
     constructor(){
         super();
-
         this.state = {
             pin:{},
             confirm: ''
@@ -52,17 +53,21 @@ class NewPin extends Component {
     render() {
     return(
         <div>
-            <form>
-                Title <TextField required onChange={this.createSubmission.bind(this)} id="title" type="text" placeholder= "Title"/><br/>
-                Author: <TextField required onChange={this.createSubmission.bind(this)} id="author" type="text" placeholder= "author"/><br/>
-                Image: <TextField required onChange={this.createSubmission.bind(this)} id="image" type="text" placeholder= "image"/><br/>
-                Description:
+            <Link to = "/">
+                Back to landing page
+            </Link>
+            <div align = "center">
+            <form labelWidth={60}>
+                <TextField required onChange={this.createSubmission.bind(this)} size = "medium"  id="title" type="text" placeholder= "Title"  /><br/>
+                <TextField required onChange={this.createSubmission.bind(this)} id="author" type="text" placeholder= "Author"/><br/>
+                <TextField required onChange={this.createSubmission.bind(this)} id="image" type="text" placeholder= "Image"/><br/>
+                Enter a description:
                 <br/>
-                <TextField multiline rows={3} onChange={this.createSubmission.bind(this)} id="description" type="text"/>
+                <TextField multiline rows={3} onChange={this.createSubmission.bind(this)} variant="outlined" id="description" type="enter a description..." />
                 <br/>
-                Width:<TextField required onChange={this.createSubmission.bind(this)} id="width" type="number"/>
+                <TextField required onChange={this.createSubmission.bind(this)} id="width" type="number" placeholder= "Designate width"/>
                 <br/>
-                Height:<TextField required onChange={this.createSubmission.bind(this)} id="height" type="number"/>
+                <TextField required onChange={this.createSubmission.bind(this)} id="height" type="number" placeholder= "Designate height"/>
 
                 <br/>
                 <br/>
@@ -79,6 +84,7 @@ class NewPin extends Component {
                     onClick={this.handleSubmit.bind(this)}>
                 Create Pin</Button>
              </form>
+             </div>
         </div>
     )
 }}
