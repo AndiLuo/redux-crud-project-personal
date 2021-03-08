@@ -15,4 +15,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "mern-card-database-app" #Must be unique in Heroku
           heroku_email: "aluo5731@gmail.com"
+          branch: "master"
           appdir: "backend" # <- This will point to the api folder in your project
