@@ -28,10 +28,10 @@
   "scripts": {
     "deploy": "npm run build&gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm start && cd backend && npm install && npm start"
+    "heroku-postbuild": "cd backend && npm install && npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
