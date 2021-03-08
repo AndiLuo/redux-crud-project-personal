@@ -4,6 +4,7 @@ const schema = require('./schema')
 const mongoose = require('mongoose')
 const ExpressGraphQL = require("express-graphql");
 
+const PORT = process.env.PORT || 8080
 const app = express();
 
 app.use(
@@ -14,6 +15,6 @@ app.use(
     })
 )
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log(`GraphQL server listening http://localhost:8080/graphql/pins`);
 });
