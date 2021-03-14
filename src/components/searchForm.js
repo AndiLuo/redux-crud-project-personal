@@ -1,14 +1,29 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {searchPin, fetchPins, setLoading} from "../actions/fetchAction";
-
 import TextField from '@material-ui/core/TextField';
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+  root: {
+    "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white"
+    },
+  },
+  input: {
+    color: "white",
+    textAlign:"center",
+    justifyContent:"center"
+  }
+};
 
 const mapStateToProps = (state) => ({
   searchText: state.pins.searchText
 })
 
 function SearchForm(props) {
+
+  const { classes } = props
 
   useEffect(() => {
     props.fetchPins(props.searchText)
@@ -43,15 +58,18 @@ function SearchForm(props) {
           label="Search Pins"
           placeholder="Find You"
           onChange={handleChange}
+          className={classes.root}
+          variant="outlined"
           defaultValue={props.inputValue}
           InputProps={{
-            textAlign:"center"
+            className: classes.input
           }}
           InputLabelProps={{
             style: {
               color: "white",
               fontSize:"1vw",
-              textAlign:"center"
+              textAlign:"center",
+              fontFamily: "Consolas",
             }
           }}
           style={{width:"50%", height:"40%" }}
@@ -62,5 +80,5 @@ function SearchForm(props) {
   );
 }
 
-export default connect(mapStateToProps, {searchPin, fetchPins, setLoading})(SearchForm);
+export default connect(mapStateToProps, {searchPin, fetchPins, setLoading})(withStyles(styles)(SearchForm));
 

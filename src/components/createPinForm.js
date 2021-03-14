@@ -5,6 +5,19 @@ import { withRouter } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = {
+    root: {
+      background: "black"
+    },
+    input: {
+      color: "white",
+      textAlign:"center",
+      justifyContent:"center",
+      fontFamily:"Consolas"
+    }
+  };
 
 
 class NewPin extends Component {
@@ -18,7 +31,6 @@ class NewPin extends Component {
     }
 
     componentDidMount() {
-
     }
     //looks at each textfields ID and sets values in this.state.pin according to that textfields value
     createSubmission(e) {
@@ -51,64 +63,71 @@ class NewPin extends Component {
     }
 
     render() {
+        const { classes } = this.props
         return (
-            <div>
-                <Link to="/">
-                    Back to landing page
-            </Link>
-                <div style={{
-                    color: "white",
-                    height: "100vh",
-                    fontFamily: "Consolas",
-                    fontSize: "1vw",
-                    display: "flex",
-                    position: "relative",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    textAlign: "center"
-                }}>
+            <div style={{
+                color: "white",
+                height: "100vh",
+                fontFamily: "Consolas",
+                fontSize: "1vw",
+                display: "flex",
+                position: "relative",
+                alignItems: "center",
+                flexDirection: "column",
+                justifyContent: "center",
+                textAlign: "center"}}>
+                <Button style={{fontFamily: "Consolas", borderColor:"white", fontSize:"1vw"}}>
+                    <Link to="/" style={{color:"white", borderColor:"white", fontSize:"2vw"}}>
+                        Back to landing page
+                    </Link>
+                </Button>
+                <div>
                     <form labelWidth={60}>
                         <TextField InputLabelProps={{
                             style: {
                                 color: "white",
                                 fontSize: "1vw",
-                                textAlign: "center"
+                                textAlign: "center",
+                                fontFamily: "Consolas",
                             }
-                        }} required onChange={this.createSubmission.bind(this)} size="medium" id="title" type="text" label="Title" /><br />
+                        }} InputProps={{className: classes.input}} required onChange={this.createSubmission.bind(this)} size="medium" id="title" type="text" label="Title" /><br />
                         <TextField InputLabelProps={{
                             style: {
                                 color: "white",
                                 fontSize: "1vw",
-                                textAlign: "center"
+                                textAlign: "center",
+                                fontFamily: "Consolas",
                             }
-                        }} required onChange={this.createSubmission.bind(this)} id="author" type="text" label="Author" /><br />
+                        }} InputProps={{className: classes.input}} required onChange={this.createSubmission.bind(this)} id="author" type="text" label="Author" /><br />
                         <TextField InputLabelProps={{
                             style: {
                                 color: "white",
                                 fontSize: "1vw",
-                                textAlign: "center"
+                                textAlign: "center",
+                                fontFamily: "Consolas",
                             }
-                        }} required onChange={this.createSubmission.bind(this)} id="image" type="text" label="Image" /><br />
+                        }} InputProps={{className: classes.input}} required onChange={this.createSubmission.bind(this)} id="image" type="text" label="Image" /><br />
                         <p style={{ color: "white", fontSize: "1vw" }}>Enter a description</p>
                         <br />
-                        <TextField multiline rows={3} onChange={this.createSubmission.bind(this)} variant="outlined" id="description" type="enter a description..." />
+                        <TextField InputProps={{className: classes.input}}  style={{fontSize:"15px", color:"white"}} multiline rows={3} onChange={this.createSubmission.bind(this)} variant="outlined" id="description" type="enter a description..." />
                         <br />
                         <TextField InputLabelProps={{
                             style: {
                                 color: "white",
-                                fontSize: "1vw",
-                                textAlign: "center"
+                                fontSize: "0.6vw",
+                                textAlign: "center",
+                                fontFamily: "Consolas"
                             }
-                        }} required onChange={this.createSubmission.bind(this)} id="width" type="number" label="Designate width" />
+                        }} InputProps={{className: classes.input}} required onChange={this.createSubmission.bind(this)} id="width" type="number" label="Designate width" />
                         <br />
                         <TextField InputLabelProps={{
                             style: {
                                 color: "white",
-                                fontSize: "1vw",
-                                textAlign: "center"
+                                fontSize: "0.6vw",
+                                textAlign: "center",
+                                fontFamily: "Consolas",
                             }
-                        }} required onChange={this.createSubmission.bind(this)} id="height" type="number" label="Designate height" />
+                        }} InputProps={{className: classes.input}} required onChange={this.createSubmission.bind(this)} id="height" type="number" label="Designate height" />
 
                         <br />
                         <br />
@@ -136,4 +155,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(NewPin));
+export default withRouter(connect(mapStateToProps)(withStyles(styles)(NewPin)));
