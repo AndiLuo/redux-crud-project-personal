@@ -1,5 +1,7 @@
 .website {
-    background-image: url("./background.jpg");
+    background: url(images/loader.webp) repeat 0 0;;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }

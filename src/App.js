@@ -14,12 +14,11 @@ const client = new ApolloClient({
 });
 
 
-
 function App(props) {
 
   return (
     //Apollo client routing
-    <div className = "website">
+    <div className='website'>
     <ApolloProvider client = {client}>
       <Provider store = {store}>
         <BrowserRouter>

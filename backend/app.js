@@ -3,14 +3,17 @@ const mongo = require("mongodb");
 const assert = require("assert");
 
 const MongoClient = require("mongodb").MongoClient;
+const mongoose = require('mongoose')
 const url = "mongodb://localhost:27017";
 const dbName = "pinDB";
 const pinController = require("./controllers/PinController");
+
 
 // assign connection to client var
 const client = new MongoClient(url);
 const cors = require("cors");
 const PORT = process.env.PORT || 8080;
+
 
 const bodyParser = require("body-parser");
 const app = express();
@@ -59,8 +62,6 @@ app.post("/api/pins", function (req, res, next) {
     db.collection('pins').insertOne(req.body)
     });
   })
-
-
 
 
 app.listen(PORT, () => {

@@ -27,6 +27,7 @@ function PinContainer(props) {
         direction="row"
         justify="flex-start"
         alignItems="flex-start"
+        style={{gridGap:"30px"}}
         >
         {gallery}
         </Grid>

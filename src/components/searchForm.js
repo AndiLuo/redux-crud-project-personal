@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {searchPin, fetchPins, setLoading} from "../actions/fetchAction";
+
 import TextField from '@material-ui/core/TextField';
 
 const mapStateToProps = (state) => ({
@@ -43,8 +44,19 @@ function SearchForm(props) {
           placeholder="Find You"
           onChange={handleChange}
           defaultValue={props.inputValue}
+          InputProps={{
+            textAlign:"center"
+          }}
+          InputLabelProps={{
+            style: {
+              color: "white",
+              fontSize:"1vw",
+              textAlign:"center"
+            }
+          }}
+          style={{width:"50%", height:"40%" }}
         />
-        <p>{props.inputValue}</p>
+        <p style={{color:"white"}}>{props.inputValue}</p>
       </form>
     </div>
   );
