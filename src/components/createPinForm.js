@@ -142,7 +142,7 @@ class NewPin extends Component {
                             variant='contained'
                             color="primary"
                             onClick={this.handleSubmit.bind(this)}>
-                            Create Pin</Button>
+                            Create Card</Button>
                     </form>
                 </div>
             </div>

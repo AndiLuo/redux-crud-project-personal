@@ -71,7 +71,7 @@ function LandingPage(props) {
                 color = "primary"
                 style={{fontFamily: "Consolas", borderColor:"white", fontSize:"1vw", color:"white"}}
                 >
-                    Create your own pin!
+                    Create your own card!
                 </Button>
             </span>
             {loading ? <Spinner/> : <PinContainer/> }

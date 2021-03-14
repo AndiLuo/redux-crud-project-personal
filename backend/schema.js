@@ -9,7 +9,7 @@ const {
 } = require("graphql");
 
 //Connect to mongoDB
-mongoose.connect("mongodb://localhost:27017/pinDB")
+mongoose.connect("mongodb://localhost:27017/cardDB")
 
 //model to connect to mongoDB
 const pinModel = mongoose.model("pin", {

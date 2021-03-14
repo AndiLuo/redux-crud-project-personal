@@ -55,7 +55,7 @@ function SearchForm(props) {
       <form onSubmit = {handleSubmit}>
         <TextField
           id="standard-basic"
-          label="Search Pins"
+          label="Search Cards"
           placeholder="Find You"
           onChange={handleChange}
           className={classes.root}

@@ -5,7 +5,7 @@ const assert = require("assert");
 const MongoClient = require("mongodb").MongoClient;
 const mongoose = require('mongoose')
 const url = "mongodb://localhost:27017";
-const dbName = "pinDB";
+const dbName = "cardDB";
 const pinController = require("./controllers/PinController");
 
 
