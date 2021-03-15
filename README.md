@@ -1,5 +1,3 @@
-Hi everyone! This is just a MERN stack (Mongo-Express-React-Node) application that allows you to view, search and create data entries which output as cards.
-
 
 ### `Setting up`
 Prior to starting the app, you will need to run 'npm install' via. node terminal in the backend directory and frontend directory to install all neccessary modules.
