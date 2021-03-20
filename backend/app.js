@@ -36,7 +36,7 @@ const findPins = function (db, callback) {
 
 // /api/pins == default page
 //creates connection and assigns entries to route
-app.get("https://cardstagram.herokuapp.com/api/pins", function (req, res, next) {
+app.get("/api/pins", function (req, res, next) {
   client.connect(function (err) {
     assert.equal(null, err);
     console.log("Connected to server");
@@ -50,7 +50,7 @@ app.get("https://cardstagram.herokuapp.com/api/pins", function (req, res, next) 
 });
 
 //allows createPin front-end component to create data entries and add them to mongo database
-app.post("https://cardstagram.herokuapp.com/api/pins", function (req, res, next) {
+app.post("/api/pins", function (req, res, next) {
   client.connect(function (err) {
     assert.equal(null, err);
     console.log("Connected to server");
