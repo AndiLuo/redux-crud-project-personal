@@ -4,7 +4,7 @@ const assert = require("assert");
 
 const MongoClient = require("mongodb").MongoClient;
 const mongoose = require('mongoose')
-const url = "mongodb://localhost:27017";
+const url = "mongodb+srv://mrnippy:inkchongwhat@mern.ykmoc.mongodb.net/cardDB?retryWrites=true&w=majority";
 const dbName = "cardDB";
 const pinController = require("./controllers/PinController");
 
@@ -36,7 +36,7 @@ const findPins = function (db, callback) {
 
 // /api/pins == default page
 //creates connection and assigns entries to route
-app.get("/api/pins", function (req, res, next) {
+app.get("https://cardstagram.herokuapp.com/api/pins", function (req, res, next) {
   client.connect(function (err) {
     assert.equal(null, err);
     console.log("Connected to server");
@@ -50,7 +50,7 @@ app.get("/api/pins", function (req, res, next) {
 });
 
 //allows createPin front-end component to create data entries and add them to mongo database
-app.post("/api/pins", function (req, res, next) {
+app.post("https://cardstagram.herokuapp.com/api/pins", function (req, res, next) {
   client.connect(function (err) {
     assert.equal(null, err);
     console.log("Connected to server");
