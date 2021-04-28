@@ -1,4 +1,4 @@
-Backend currently hosted on heroku and frontend on netlify.
+Backend node.js server for my cardstagram application
 
 Link to application: https://cardstagram.netlify.app/
 
