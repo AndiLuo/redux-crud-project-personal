@@ -1,6 +1,6 @@
 Backend currently hosted on heroku and frontend on netlify.
 
-Link to application: https://hungry-kare-841e43.netlify.app 
+Link to application: https://cardstagram.netlify.app/
 
 ### `Setting up`
 Prior to starting the app, you will need to run 'npm install' via. node terminal in the backend directory and frontend directory to install all neccessary modules.
