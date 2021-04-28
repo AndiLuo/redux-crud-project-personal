@@ -1,6 +1,6 @@
 Backend node.js server for my cardstagram application
 
-Link to application: https://cardstagram.netlify.app/
+Link to Server: https://cardstagram.herokuapp.com/api/pins
 
 ### `Setting up`
 Prior to starting the app, you will need to run 'npm install' via. node terminal in the backend directory and frontend directory to install all neccessary modules.
